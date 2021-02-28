@@ -14,7 +14,7 @@ void ShoppingCart ()
     printf ("%s %d %s %d %s", "Beet - ", BeetValue, "kg. Price -", BeetValue * BeetPrice, "\n");
 }
 
-int PriceCalculation ()
+void PriceCalculation ()
 {
     double Discount = 1;
     int TotalWeight = PotatoValue + CarrotValue + BeetValue;
@@ -31,10 +31,12 @@ int PriceCalculation ()
         Discount = 0.9;
     }
 
-    int TotalPrice = (PotatoValue * PotatoPrice + CarrotValue * CarrotPrice + BeetValue * BeetPrice) * Discount;
 
     ShoppingCart();
     printf ("%s %d %s", "Your discount is ", (int)((1 - Discount) * 100), "% \n");
+    printf ("%s", "Delivery 15000 \n");
+    printf ("%s %d %s", "Total price ",
+            (int) (((PotatoValue * PotatoPrice + CarrotValue * CarrotPrice + BeetValue * BeetPrice) * Discount) + 15000), "\n");
 
 }
 
@@ -87,7 +89,7 @@ int main() {
         }
         if (choice == 5)
         {
-
+            PriceCalculation();
         }
         if (choice == 6)
         {
