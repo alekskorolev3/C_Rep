@@ -28,11 +28,11 @@ _Bool downcheck (int n)
     return true;
 
 }
-void main(void) {
+int main() {
     int n;
     scanf("%d", &n);
     int i = 10;
-    for (i; i <= n; i++)
+    while (i <= n)
     {
 
         if (upcheck(i) == true || downcheck(i) == true)
@@ -40,5 +40,7 @@ void main(void) {
             printf ("%d", i);
             printf ("%c", ' ');
         }
+        i++;
     }
+    return 0;
 }
