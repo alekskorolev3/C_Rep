@@ -6,9 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/Projects/C/C_Rep/lab1/main.c
+D:/Projects/C/C_Rep/lab1/1.2/main.c
 stdio.h
 -
 stdbool.h
 -
+main.h
+D:/Projects/C/C_Rep/lab1/1.2/main.h
+
+D:/Projects/C/C_Rep/lab1/1.2/main.h
 
