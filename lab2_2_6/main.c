@@ -10,6 +10,7 @@ double Formula (int n, double x, double* sum, double* present)
 }
 int main() {
     double x = 2, e = 0.0000001;
+    //a
 
     int n = 2;
     /*scanf ("%f",&x);*/
