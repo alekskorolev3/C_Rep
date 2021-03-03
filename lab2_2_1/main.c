@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include "main.h"
+
 int PotatoValue = 0;
 int CarrotValue = 0;
 int BeetValue = 0;
 const int PotatoPrice = 500;
 const int CarrotPrice = 1000;
 const int BeetPrice = 700;
-
+int CliReadInt ()
+{
+    
+}
 
 int main() {
 
