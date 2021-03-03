@@ -8,4 +8,5 @@ void Feedback ();
 void ShoppingCart ();
 void PriceCalculation ();
 void PrintMenu ();
+int CliReadInt ();
 #endif //LAB2_2_1_MAIN_H

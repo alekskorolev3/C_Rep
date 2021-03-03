@@ -11,38 +11,7 @@ int BeetValue = 0;
 const int PotatoPrice = 500;
 const int CarrotPrice = 1000;
 const int BeetPrice = 700;
-int CliReadInt ()
-{
-    char c[11];
-    int n = 0;
-    bool check = true;
-    while (check)
-    {
-        fgets(c, 11, stdin);
-        int i = 0;
-        while (i < strlen(c) - 1)
-        {
-            if (!isdigit(c[i++]))
-            {
-                printf ("Error. You need to write integer value");
-                check = true;
-                fflush(stdin);
-                break;
-            }
-            check = false;
-        }
-    }
-    int i = (int)strlen(c) - 2;
 
-    int k = 0;
-    while (i > -1)
-    {
-        n += (c[k++] - '0') * (int)pow ((int)10, i--);
-
-    }
-    return n;
-
-}
 
 int main() {
 
@@ -92,6 +61,40 @@ int main() {
 
     }
 }
+
+int CliReadInt ()
+{
+    char c[11];
+    int n = 0;
+    bool check = true;
+    while (check)
+    {
+        fgets(c, 11, stdin);
+        int i = 0;
+        while (i < strlen(c) - 1)
+        {
+            if (!isdigit(c[i++]))
+            {
+                printf ("Error. You need to write integer value");
+                check = true;
+                fflush(stdin);
+                break;
+            }
+            check = false;
+        }
+    }
+    int i = (int)strlen(c) - 2;
+
+    int k = 0;
+    while (i > -1)
+    {
+        n += (c[k++] - '0') * (int)pow ((int)10, i--);
+
+    }
+    return n;
+
+}
+
 void Feedback ()
 {
     printf("eVegetables, 2021 \n");
