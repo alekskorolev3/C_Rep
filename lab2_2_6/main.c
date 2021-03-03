@@ -1,36 +1,25 @@
 #include <stdio.h>
 #include <math.h>
 
-unsigned long long fact = 1;
 
-unsigned long long Factorial (int n)
+double Formula (int n, double x, double* sum, double* present)
 {
-    if (n > 0)
-    {
-        fact *= n;
-        n -= 1;
-        Factorial(n);
-    }
-    else
-    {
-        return fact;
-    }
-}
-double Formula (int n, double x)
-{
-    double nominator = pow (-1, n - 1) * pow (x, n * 2 - 1);
-    double denominator = (double) Factorial (n * 2 - 1);
-    double right_op = nominator / denominator;
-    return right_op;
+    *present = *present * (-pow(x, 2))/(2*(2*n - 1)*(n - 1));
+    *sum = *sum + *present;
+    return *sum;
 }
 int main() {
-    int n, x, e;
-    double value = 0;
-    scanf ("%d",&n);
-    scanf ("%d",&x);
-    while (n > 0)
+    double x = 2, e = 0.0000001;
+
+    int n = 2;
+    /*scanf ("%f",&x);*/
+    double sum = x;
+    double present = x;
+
+    while (fabs(Formula(n, x, &sum, &present) - sin(x)) >= e)
     {
-        value += Formula (n--, x);
+        printf ("%f %f %d %s", sin(x), sum, n, "\n");
+        n++;
     }
-    printf("%f %f", sin(x), value);
+
 }
