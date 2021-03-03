@@ -9,6 +9,14 @@
 D:/Projects/C/C_Rep/lab2_2_1/main.c
 stdio.h
 -
+ctype.h
+-
+string.h
+-
+math.h
+-
+stdbool.h
+-
 main.h
 D:/Projects/C/C_Rep/lab2_2_1/main.h
 

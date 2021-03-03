@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+#include <stdbool.h>
 #include "main.h"
 
 int PotatoValue = 0;
@@ -9,7 +13,35 @@ const int CarrotPrice = 1000;
 const int BeetPrice = 700;
 int CliReadInt ()
 {
-    
+    char c[11];
+    int n = 0;
+    bool check = true;
+    while (check)
+    {
+        fgets(c, 11, stdin);
+        int i = 0;
+        while (i < strlen(c) - 1)
+        {
+            if (!isdigit(c[i++]))
+            {
+                printf ("Error. You need to write integer value");
+                check = true;
+                fflush(stdin);
+                break;
+            }
+            check = false;
+        }
+    }
+    int i = (int)strlen(c) - 2;
+
+    int k = 0;
+    while (i > -1)
+    {
+        n += (c[k++] - '0') * (int)pow ((int)10, i--);
+
+    }
+    return n;
+
 }
 
 int main() {
@@ -18,12 +50,12 @@ int main() {
     while (choice != 7)
     {
         PrintMenu();
-        scanf("%d", &choice);
+        choice = CliReadInt();
         if (choice == 1)
         {
             printf ("Enter how many kilograms of potatoes you want to add to the cart ");
             int value;
-            scanf ("%d", &value);
+            value = CliReadInt();
             PotatoValue += value;
 
 
@@ -32,7 +64,7 @@ int main() {
         {
             printf ("Enter how many kilograms of carrot you want to add to the cart ");
             int value;
-            scanf ("%d", &value);
+            value = CliReadInt();
             CarrotValue += value;
 
         }
@@ -40,7 +72,7 @@ int main() {
         {
             printf ("Enter how many kilograms of beet you want to add to the cart ");
             int value;
-            scanf ("%d", &value);
+            value = CliReadInt();
             BeetValue += value;
 
         }
