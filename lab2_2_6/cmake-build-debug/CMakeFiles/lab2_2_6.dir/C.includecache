@@ -11,6 +11,10 @@ stdio.h
 -
 math.h
 -
+ctype.h
+-
+stdbool.h
+-
 main.h
 D:/Projects/C/C_Rep/lab2_2_6/main.h
 
