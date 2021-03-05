@@ -5,4 +5,5 @@
 #ifndef LAB2_2_6_MAIN_H
 #define LAB2_2_6_MAIN_H
 double Expr (int n, double x, double* sum, double* present);
+double CliReadDouble ();
 #endif //LAB2_2_6_MAIN_H

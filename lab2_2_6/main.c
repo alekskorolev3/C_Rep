@@ -3,45 +3,13 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include "main.h"
-double CliReadDouble ()
-{
-    char c[100];
-    bool check = true;
-    while (check)
-    {
-        fgets (c,100, stdin);
-        fflush(stdin);
 
-        int i = 0;
-        int DotCount = 0;
-        while (c[i++] != '\n')
-        {
-            if (!isdigit(c[i]))
-            {
-                if (c[i] == '.' && DotCount < 2)
-                {
-                    DotCount++;
-                    continue;
-                }
-                printf ("Please, enter the correct value \n");
-                break;
-            }
-            check = false;
-        }
-
-
-    }
-    return atof(c);
-
-
-}
 int main() {
     double x = 0, e = 0;
     int n = 2;
-    printf ("Enter 'x' value and measurement uncertainty 'e' \n");
-    /*scanf ("%lf",&x);
-    scanf ("%lf", &e);*/
+    printf ("Enter 'x' value\n");
     x = CliReadDouble();
+    printf ("Enter measurement uncertainty 'e' \n");
     e = CliReadDouble();
     double sum = x;
     double present = x;
@@ -60,4 +28,47 @@ double Expr (int n, double x, double* sum, double* present)
     *present = *present * (-pow(x, 2))/(2*(2*n - 1)*(n - 1));
     *sum = *sum + *present;
     return *sum;
+}
+
+double CliReadDouble ()
+{
+    char c[100];
+    bool check = true;
+    while (check)
+    {
+        fgets (c,100, stdin);
+        fflush(stdin);
+
+        int i = 0;
+        int DotCount = 0;
+        if (c[0] == '\n' || c[0] == '.')
+        {
+            printf("Please, enter the correct value \n");
+            continue;
+        }
+        do
+        {
+            if (!isdigit(c[i]))
+            {
+                if (c[i] == '\n')
+                {
+                    check = false;
+                    break;
+                }
+                if (c[i] == '.')
+                {
+                    DotCount++;
+                    if (DotCount > 1)
+                    {
+                        printf("Please, enter the correct value \n");
+                        break;
+                    }
+                    continue;
+                }
+                printf("Please, enter the correct value \n");
+                break;
+            }
+        } while (c[i++] != '\n');
+    }
+    return atof(c);
 }
