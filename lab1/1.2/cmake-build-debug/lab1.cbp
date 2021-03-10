@@ -80,6 +80,9 @@
 		<Unit filename="D:/Projects/C/C_Rep/lab1/1.2/main.h">
 			<Option target="lab1"/>
 		</Unit>
+		<Unit filename="D:/Projects/C/C_Rep/lab1/1.2/test.c">
+			<Option target="lab1"/>
+		</Unit>
 		<Unit filename="D:/Projects/C/C_Rep/lab1/1.2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

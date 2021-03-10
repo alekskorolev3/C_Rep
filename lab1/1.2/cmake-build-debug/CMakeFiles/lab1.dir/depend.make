@@ -4,3 +4,6 @@
 CMakeFiles/lab1.dir/main.c.obj: ../main.c
 CMakeFiles/lab1.dir/main.c.obj: ../main.h
 
+CMakeFiles/lab1.dir/test.c.obj: ../main.h
+CMakeFiles/lab1.dir/test.c.obj: ../test.c
+
